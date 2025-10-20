@@ -1,0 +1,101 @@
+# Class 1: Variables, Input & Output
+**Variable**: Text or Number
+<br>
+Text - 1) char (1 word, 'A'), 2) String (2+ words "Words") note btw ' and "
+<br>
+Number - 1) int, 2) double, 3) float (# ends with f. ex. 173.4f) 
+<br> 
+*Note:* char and float not so much in use nowadays (used for memory saving purpose) 
+<br><br>
+lowercase start: primitive type (ex. char, int, double, float) <br>
+Two Data Types: 1) primative, 2) non-primitive //in class, 원시형 & 참조형 <br>
+<br>
+Class: String, System.out.println(), etc. <br>
+*Note*: print**ln** = insert a line = enter = br = /n <br>
+String works like a primitive for user preference <br>
+Ex. String name = "abc"; // placed in Heap <br>
+vs. String name1 = "abc"; placed in String Constant Pool <br>
+<br>
+Note - String Constant Pool moved to Heap starting in Java7. <br>
+Before Java7, String Constant Poll existed in Perm, where stored metadata, exception to GC (garbage collection)<br>
+However, in Java8, Perm was deleted and String Constant Pool moved to Heap.<br?
+Heap is applied with GC, any String lost its reference in String Constant Pool returns back to memory.<br>
+<br>
+*I really don't understand this reference, but I can tell that the updates in Java changes a lot*<br>
+<br>
+*Reference:* https://tecoble.techcourse.co.kr/post/2020-09-07-dive-into-java-string <br>
+<br><br>
+Type Not Matching : Exception (Error) <br>
+<br>
+Input: Scanner **sc** = Scanner(System.in); note: **sc** can be replaced to any other variable<br>
+Input Methods: 1) nextLine(), 2) nextInt() //either string or int <br>
+Output: System.out.println() // ln - line, enter <br>
+<br>
+**Hard Coding** - using variable with a fixed text or number. Can be used in an intense situation like Hackerton or correction right before publishing deadline, etc.<br>
+<br>
+<br>
+## HM
+**1) Install IntelliJ Community Edition** - IntelliJ community edition installed through Jetbrains Toolbox.<br>
+Reference: https://www.jetbrains.com/toolbox-app/<br>
+<br>
+**2) Explain which Java version installed and why** - Installed through official IntelliJ website and the version is 2025.2.<br>
+By opening a new project, it says no JDK and recommends JDK25, while JDK is available from 1.8, 11, 13, 15 thru 26. <br>
+Looks like 26 is the latest ver., however, it is in early access and thus it may not reflect the newest feature well. <br>
+So downloading the latest ver, which is 25, is recommended as it shows high compatibility with other vendors like Oracle OpenJDK, Amazon Correcto, Bellsoft, Azul, Microsoft, etc. <br>
+*I am not so sure what is a "vendor" is though....<br>
+<br>
+**3) Check "Hello Java!" - Checked "Hello and Welcome!" and i = 1 to 5.<br?
+<br>
+### 🎯 변수 실습 과제
+- Lv 1. 변수를 쓰지 않고 자기소개 출력 (3줄이상) <br>
+- Lv 2. 변수를 써서 자기소개글을 다른사람을 쓰는 소개글로 변경 (하드코딩) <br>
+- Lv 3. 입력 함수를 써서 자기소개글을 다른사람을 쓰는 소개글로 변경  (Scanner 활용) <br>
+    - 이 단계에서는 꼭 자기소개글이 아니라 어떤 형태의 글이라도 상관이 없다. <br>
+<br>
+
+### Lv. 1
+void main() {<br>
+System.out.println("안녕하세요, 닉스입니다");<br>
+System.out.println("스레드에서 보고 연락드렸습니다. 잘 부탁드립니다");<br>
+System.out.println("저는 현재 뉴욕에서 살고 있습니다");<br>
+}<br>
+<br>
+
+### Lv. 2
+void main() {<br>
+String name = "닉스";<br>
+String community = "스레드";<br>
+String city = "뉴욕";<br>
+<br>
+System.out.println("안녕하세요, " + name + "입니다");<br>
+System.out.println(community + "에서 보고 연락드렸습니다. 잘 부탁드립니다");<br>
+System.out.println("저는 현재 " + city + "에서 살고 있습니다");<br>
+}<br>
+<br>
+
+### Lv. 3
+void main() {<br>
+System.out.println("\n지금부터 자기소개를 위한 정보를 수집하겠습니다");<br>
+Scanner sc =  new Scanner(System.in);<br>
+System.out.println("\n당신의 이름은 무엇입니까?");<br>
+String name = sc.nextLine();<br>
+System.out.println("\n당신이 하는 커뮤니티 이름은 무엇입니까?");<br>
+String community = sc.nextLine();<br>
+System.out.println("\n당신이 사는 지역은 어디입니까?");<br>
+String city = sc.nextLine();<br>
+System.out.println("\n당신은 몇 살입니까?");<br>
+int age = sc.nextInt();<br>
+sc.nextLine(); **//this is a MUST!!!! Otherwise proceed to output directly** <br>
+System.out.println("\n하고 싶은 말을 써주세요");<br>
+String words = sc.nextLine();<br>
+System.out.println("\n정보를 취합하는 중입니다... 엔터를 쳐주세요");<br>
+String enter = sc.nextLine();<br>
+<br>
+System.out.println("\n\n----------------------");<br>
+System.out.println("안녕하세요, " + name + "입니다");<br>
+System.out.println(community + "에서 보고 연락드렸습니다. 잘 부탁드립니다");<br>
+System.out.println("저는 현재 " + city + "에서 살고 있습니다");<br>
+System.out.println("저는 " + age + "살입니다");<br>
+System.out.println(words);<br>
+System.out.println("----------------------");<br>
+}<br>
