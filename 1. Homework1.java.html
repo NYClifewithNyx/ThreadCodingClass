@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or</span>
+<span class="s0">// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.</span>
+<span class="s2">void </span><span class="s1">main</span><span class="s3">() {</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">지금부터 자기소개를 위한 정보를 수집하겠습니다&quot;</span><span class="s3">);</span>
+    <span class="s1">Scanner sc </span><span class="s3">=  </span><span class="s2">new </span><span class="s1">Scanner</span><span class="s3">(</span><span class="s1">System</span><span class="s3">.</span><span class="s1">in</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">당신의 이름은 무엇입니까?&quot;</span><span class="s3">);</span>
+    <span class="s1">String name </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">당신이 하는 커뮤니티 이름은 무엇입니까?&quot;</span><span class="s3">);</span>
+    <span class="s1">String community </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">당신이 사는 지역은 어디입니까?&quot;</span><span class="s3">);</span>
+    <span class="s1">String city </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">당신은 몇 살입니까?&quot;</span><span class="s3">);</span>
+    <span class="s2">int </span><span class="s1">age </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextInt</span><span class="s3">();</span>
+    <span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">하고 싶은 말을 써주세요&quot;</span><span class="s3">);</span>
+    <span class="s1">String words </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">정보를 취합하는 중입니다... 엔터를 쳐주세요&quot;</span><span class="s3">);</span>
+    <span class="s1">String enter </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n\n</span><span class="s4">----------------------&quot;</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;안녕하세요, &quot; </span><span class="s3">+ </span><span class="s1">name </span><span class="s3">+ </span><span class="s4">&quot;입니다&quot;</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">community </span><span class="s3">+ </span><span class="s4">&quot;에서 보고 연락드렸습니다. 잘 부탁드립니다&quot;</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;저는 현재 &quot; </span><span class="s3">+ </span><span class="s1">city </span><span class="s3">+ </span><span class="s4">&quot;에서 살고 있습니다&quot;</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;저는 &quot; </span><span class="s3">+ </span><span class="s1">age </span><span class="s3">+ </span><span class="s4">&quot;살입니다&quot;</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">words</span><span class="s3">);</span>
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;----------------------&quot;</span><span class="s3">);</span>
+<span class="s3">}</span>
+</pre>
+</body>
+</html>
