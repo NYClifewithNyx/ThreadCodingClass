@@ -1,0 +1,176 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">time</span><span class="s2">.</span><span class="s1">Year</span><span class="s2">;</span>
+
+<span class="s0">void </span><span class="s1">main</span><span class="s2">() {</span>
+    <span class="s1">Scanner sc </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+    <span class="s1">String id</span><span class="s2">;</span>
+    <span class="s1">String pw</span><span class="s2">;</span>
+    <span class="s1">String pw2</span><span class="s2">;</span>
+    <span class="s1">String nickname</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">currentYr </span><span class="s2">= </span><span class="s1">Year</span><span class="s2">.</span><span class="s1">now</span><span class="s2">().</span><span class="s1">getValue</span><span class="s2">();</span>
+    <span class="s0">int </span><span class="s1">year</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">month</span><span class="s2">;</span>
+    <span class="s0">int </span><span class="s1">day</span><span class="s2">;</span>
+    <span class="s1">String phone</span><span class="s2">;</span>
+    <span class="s1">String reason</span><span class="s2">;</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">안녕하세요! 닉스 커뮤니티에 오신 것을 환영합니다&quot;</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;신규 가입을 위해서 정보를 입력하여 주시기 바랍니다&quot;</span><span class="s2">);</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">커뮤니티에서 사용할 아이디를 입력해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">id </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;이 아이디로 하시겠습니까?: &quot; </span><span class="s2">+ </span><span class="s1">id</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;1. 네   2. 아니오&quot;</span><span class="s2">);</span>
+    <span class="s0">int </span><span class="s1">choice </span><span class="s2">= </span><span class="s4">0</span><span class="s2">;</span>
+    <span class="s1">choice </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s0">switch </span><span class="s2">(</span><span class="s1">choice</span><span class="s2">) {</span>
+        <span class="s0">case </span><span class="s4">1</span><span class="s2">:</span>
+            <span class="s0">break</span><span class="s2">;</span>
+        <span class="s0">case </span><span class="s4">2</span><span class="s2">:</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;아이디를 다시 입력해주십시오&quot;</span><span class="s2">);</span>
+            <span class="s1">id </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+            <span class="s0">break</span><span class="s2">;</span>
+    <span class="s2">}</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">비밀번호를 입력하여 주십시오 (추천 : 8자리 이상, 숫자와 특수기호 */!@#$%^ 등을 포함해서&quot;</span><span class="s2">);</span>
+    <span class="s1">pw </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;다시 한 번 비밀번호를 입력하여 주십시오&quot;</span><span class="s2">);</span>
+    <span class="s1">pw2 </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">pw</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">pw2</span><span class="s2">)) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;비밀번호가 일치합니다&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">else </span><span class="s2">{</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;비밀번호가 일치하지 않습니다. 다시 입력해주십시오&quot;</span><span class="s2">);</span>
+        <span class="s1">pw2 </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+        <span class="s0">if </span><span class="s2">(!</span><span class="s1">pw</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">pw2</span><span class="s2">)){</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;비밀번호가 다시 일치하지 않습니다. 처음부터 다시 가입을 시도해주세요&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">커뮤니티에서 쓸 닉네임을 정해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">nickname </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">탄생 년도를 입력해주세요 (YYYY 포맷)&quot;</span><span class="s2">);</span>
+    <span class="s1">year </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">year </span><span class="s2">&lt;= </span><span class="s4">1900 </span><span class="s2">|| </span><span class="s1">year </span><span class="s2">&gt; </span><span class="s1">currentYr</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;1900년생 이전이나 &quot; </span><span class="s2">+ </span><span class="s1">currentYr </span><span class="s2">+ </span><span class="s3">&quot;년생 이후는 불가능합니다. 다시 입력해주십시오&quot;</span><span class="s2">);</span>
+        <span class="s1">year </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s2">}</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">탄생 월을 입력해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">month </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">month </span><span class="s2">&gt; </span><span class="s4">12 </span><span class="s2">|| </span><span class="s1">month </span><span class="s2">== </span><span class="s4">0</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;잘못된 입력입니다. 1월부터 12월 사이의 숫자만 가능합니다. 다시 입력해주십시오&quot;</span><span class="s2">);</span>
+        <span class="s1">month </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">탄생 일을 입력해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">day </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">day </span><span class="s2">== </span><span class="s4">0 </span><span class="s2">|| </span><span class="s1">day </span><span class="s2">&gt; </span><span class="s4">31</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;잘못된 입력입니다. 1일부터 31일 사이의 숫자만 가능합니다. 다시 입력해주십시오&quot;</span><span class="s2">);</span>
+        <span class="s1">day </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+        <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;다음과 같이 생년월일이 지정되었습니다: &quot; </span><span class="s2">+ </span><span class="s1">year </span><span class="s2">+ </span><span class="s3">&quot;/&quot; </span><span class="s2">+ </span><span class="s1">month </span><span class="s2">+ </span><span class="s3">&quot;/&quot; </span><span class="s2">+ </span><span class="s1">day</span><span class="s2">);</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">전화번호를 적어주십시오 (숫자만 적어주세요.예: 01012345678)&quot;</span><span class="s2">);</span>
+    <span class="s1">phone </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s0">int </span><span class="s1">length </span><span class="s2">= </span><span class="s1">phone</span><span class="s2">.</span><span class="s1">length</span><span class="s2">();</span>
+    <span class="s0">if</span><span class="s2">(</span><span class="s1">length </span><span class="s2">&gt; </span><span class="s4">11</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;올바르지 않은 전화번호입니다. 다시 입력해주세요&quot;</span><span class="s2">);</span>
+        <span class="s1">phone </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">가입 목적을 적어주세요.&quot;</span><span class="s2">);</span>
+    <span class="s1">reason </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">감사합니다. 아래 약관을 잘 읽고 동의를 해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">(대충 약관이 매우 길게 있음)&quot;</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">약관에 동의하신다면 1을, 동의하지 않으시면 2를 누르고 엔터를 쳐주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;1. 동의합니다    2. 동의하지 않습니다&quot;</span><span class="s2">);</span>
+
+    <span class="s0">int </span><span class="s1">choice2</span><span class="s2">;</span>
+    <span class="s1">choice2 </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s0">switch </span><span class="s2">(</span><span class="s1">choice2</span><span class="s2">) {</span>
+        <span class="s0">case </span><span class="s4">1</span><span class="s2">:</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;약관에 동의해주셔서 감사합니다. 커뮤니티 가입이 완료되었습니다&quot;</span><span class="s2">);</span>
+            <span class="s0">break</span><span class="s2">;</span>
+        <span class="s0">case </span><span class="s4">2</span><span class="s2">:</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;약관에 동의하지 않아 커뮤니티 가입이 불발되었습니다.&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+            <span class="s0">break</span><span class="s2">;</span><span class="s5">//필요 없는 것 같으나 일단 넣어봄</span>
+    <span class="s2">}</span>
+
+    <span class="s5">//community login</span>
+    <span class="s1">String userId</span><span class="s2">;</span>
+    <span class="s1">String userPw</span><span class="s2">;</span>
+
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">안녕하세요! 닉스 커뮤니티에 오신 것을 환영합니다&quot;</span><span class="s2">);</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;아이디를 입력해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">userId </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;비밀번호를 입력해주세요&quot;</span><span class="s2">);</span>
+    <span class="s1">userPw </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+    <span class="s0">if </span><span class="s2">(</span><span class="s1">userId</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">id</span><span class="s2">) &amp;&amp; </span><span class="s1">userPw</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">pw</span><span class="s2">)) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n\n</span><span class="s3">============================================&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;                 USER PROFILE               &quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;============================================&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">아이디   : &quot; </span><span class="s2">+ </span><span class="s1">id</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;닉네임   : &quot; </span><span class="s2">+ </span><span class="s1">nickname</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;생년월일 : &quot; </span><span class="s2">+ </span><span class="s1">year </span><span class="s2">+ </span><span class="s3">&quot;/&quot; </span><span class="s2">+ </span><span class="s1">month </span><span class="s2">+ </span><span class="s3">&quot;/&quot; </span><span class="s2">+ </span><span class="s1">day</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;가입 이유: &quot; </span><span class="s2">+ </span><span class="s1">reason</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">===========================================&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;(COPYRIGHT) 1980s DOS STYLE PROFILE DISPLAY&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;===========================================&quot;</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">else if </span><span class="s2">(!</span><span class="s1">userId</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">id</span><span class="s2">)) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;아이디가 맞지 않습니다. 다시 시도해주세요&quot;</span><span class="s2">);</span>
+        <span class="s5">//System.exit(0); &lt; 있으나 없으나 나가게 됨</span>
+    <span class="s2">}</span>
+    <span class="s0">else if </span><span class="s2">(!</span><span class="s1">userPw</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s1">pw</span><span class="s2">)) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;패스워드가 일치하지 않습니다. 다시 시도해주세요&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+    <span class="s2">}</span>
+    <span class="s0">else </span><span class="s2">{</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;잘못된 접근입니다.&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">1</span><span class="s2">);</span>
+    <span class="s2">}</span>
+
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
