@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #6aab73;}
+.s5 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or</span>
+<span class="s0">// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.</span>
+<span class="s2">void </span><span class="s1">main</span><span class="s3">() {</span>
+    <span class="s1">Scanner sc </span><span class="s3">= </span><span class="s2">new </span><span class="s1">Scanner</span><span class="s3">(</span><span class="s1">System</span><span class="s3">.</span><span class="s1">in</span><span class="s3">);</span>
+    <span class="s2">int </span><span class="s1">a</span><span class="s3">; </span><span class="s0">//단</span>
+    <span class="s2">int </span><span class="s1">b</span><span class="s3">; </span><span class="s0">//갯수</span>
+    <span class="s2">int </span><span class="s1">c</span><span class="s3">; </span><span class="s0">//총 출력값</span>
+    <span class="s2">int </span><span class="s1">i</span><span class="s3">; </span><span class="s0">//increment</span>
+    <span class="s2">boolean </span><span class="s1">flag </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;안녕하세요, 닉스의 구구단 교실에 오신 것을 환영합니다&quot;</span><span class="s3">);</span>
+
+    <span class="s0">//반복 구간 시작</span>
+    <span class="s2">while </span><span class="s3">(</span><span class="s1">flag</span><span class="s3">) {</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;몇 단부터 시작해볼까요?&quot;</span><span class="s3">);</span>
+        <span class="s1">a </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextInt</span><span class="s3">();</span>
+        <span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;좋습니다. &quot; </span><span class="s3">+ </span><span class="s1">a </span><span class="s3">+ </span><span class="s4">&quot;단을 계산해보겠습니다&quot;</span><span class="s3">);</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;몇까지 출력할까요?&quot;</span><span class="s3">);</span>
+        <span class="s1">b </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextInt</span><span class="s3">();</span>
+        <span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">b </span><span class="s3">+ </span><span class="s4">&quot;까지 출력하겠습니다:&quot;</span><span class="s3">);</span>
+
+        <span class="s2">for </span><span class="s3">(</span><span class="s1">i </span><span class="s3">= </span><span class="s5">1</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt;= </span><span class="s1">b</span><span class="s3">; </span><span class="s1">i</span><span class="s3">++) {</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">a </span><span class="s3">+ </span><span class="s4">&quot; x &quot; </span><span class="s3">+ </span><span class="s1">i </span><span class="s3">+ </span><span class="s4">&quot; = &quot; </span><span class="s3">+ </span><span class="s1">a </span><span class="s3">* </span><span class="s1">i</span><span class="s3">);</span>
+        <span class="s3">}</span>
+
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s4">&quot;계속 할까요? (y/n): &quot;</span><span class="s3">);</span>
+        <span class="s1">String choice</span><span class="s3">;</span>
+        <span class="s1">choice </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">choice</span><span class="s3">.</span><span class="s1">equals</span><span class="s3">(</span><span class="s4">&quot;n&quot;</span><span class="s3">)) { </span><span class="s0">//String은 .equals() 인 것을 까먹고 ==를 해서 엄청 헤멤...</span>
+            <span class="s1">flag </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s4">&quot;</span><span class="s2">\n</span><span class="s4">-----계산이 끝났습니다-----&quot;</span><span class="s3">);</span>
+            <span class="s0">//System.out.println(&quot;지금까지 저장된 결과의 총 합은 &quot; + c + &quot;입니다&quot;);</span>
+            <span class="s2">break</span><span class="s3">;</span>
+        <span class="s3">}</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+<span class="s0">//여기까진 별로 어렵지 않은데 추가하는 것이 너무 어려움. 일단 여기까지. 1시간 반 소요...</span>
+<span class="s0">//솔직히 if 대신 switch 쓰려다가 String을 int로 바꾸는게 쉽지 않아서 얌전히 String 사용</span></pre>
+</body>
+</html>
