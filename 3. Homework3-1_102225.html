@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #7a7e85;}
+.s1 { color: #bcbec4;}
+.s2 { color: #cf8e6d;}
+.s3 { color: #bcbec4;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">//TIP To &lt;b&gt;Run&lt;/b&gt; code, press &lt;shortcut actionId=&quot;Run&quot;/&gt; or</span>
+<span class="s0">// click the &lt;icon src=&quot;AllIcons.Actions.Execute&quot;/&gt; icon in the gutter.</span>
+<span class="s2">void </span><span class="s1">main</span><span class="s3">() {</span>
+    <span class="s1">Scanner sc </span><span class="s3">= </span><span class="s2">new </span><span class="s1">Scanner</span><span class="s3">(</span><span class="s1">System</span><span class="s3">.</span><span class="s1">in</span><span class="s3">);</span>
+    <span class="s2">int </span><span class="s1">a</span><span class="s3">; </span><span class="s0">//단</span>
+    <span class="s2">int </span><span class="s1">b</span><span class="s3">; </span><span class="s0">//사용자가 요구하는 갯수</span>
+    <span class="s2">int </span><span class="s1">c</span><span class="s3">; </span><span class="s0">//multiplication = (a * i)</span>
+    <span class="s2">int </span><span class="s1">i</span><span class="s3">; </span><span class="s0">//increment until b</span>
+    <span class="s2">int </span><span class="s1">k </span><span class="s3">= </span><span class="s4">0</span><span class="s3">; </span><span class="s0">//while loop counter</span>
+    <span class="s2">int </span><span class="s1">j </span><span class="s3">= </span><span class="s4">0</span><span class="s3">; </span><span class="s0">//sum of 구구단</span>
+    <span class="s2">boolean </span><span class="s1">flag </span><span class="s3">= </span><span class="s2">true</span><span class="s3">;</span>
+    <span class="s2">int</span><span class="s3">[] </span><span class="s1">array </span><span class="s3">= </span><span class="s2">new int</span><span class="s3">[</span><span class="s4">10</span><span class="s3">]; </span><span class="s0">//하드 코딩. Save slot은 10개까지만.</span>
+
+    <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">안녕하세요, 닉스의 구구단 교실에 오신 것을 환영합니다&quot;</span><span class="s3">);</span>
+
+    <span class="s0">//반복 구간 시작</span>
+    <span class="s2">while </span><span class="s3">(</span><span class="s1">flag</span><span class="s3">) {</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">몇 단부터 시작해볼까요?&quot;</span><span class="s3">);</span>
+        <span class="s1">a </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextInt</span><span class="s3">();</span>
+        <span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;좋습니다. &quot; </span><span class="s3">+ </span><span class="s1">a </span><span class="s3">+ </span><span class="s5">&quot;단을 계산해보겠습니다&quot;</span><span class="s3">);</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">몇까지 출력할까요?&quot;</span><span class="s3">);</span>
+        <span class="s1">b </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextInt</span><span class="s3">();</span>
+        <span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">b </span><span class="s3">+ </span><span class="s5">&quot;까지 출력하겠습니다:&quot;</span><span class="s3">);</span>
+
+        <span class="s2">for </span><span class="s3">(</span><span class="s1">i </span><span class="s3">= </span><span class="s4">1</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt;= </span><span class="s1">b</span><span class="s3">; </span><span class="s1">i</span><span class="s3">++) {</span>
+            <span class="s1">c </span><span class="s3">= </span><span class="s1">a </span><span class="s3">* </span><span class="s1">i</span><span class="s3">;</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">a </span><span class="s3">+ </span><span class="s5">&quot; x &quot; </span><span class="s3">+ </span><span class="s1">i </span><span class="s3">+ </span><span class="s5">&quot; = &quot; </span><span class="s3">+ </span><span class="s1">c</span><span class="s3">);</span>
+        <span class="s3">}</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">b</span><span class="s3">%</span><span class="s4">2 </span><span class="s3">== </span><span class="s4">0</span><span class="s3">) { </span><span class="s0">//짝수일때 총 합 계산... 분명 이 방법을 바란게 아니라 아래 sum += array[i] 방식을 요구하셨을텐데... 수학적으로 풀어버림 ㅋㅋ 이 방법 먼저 찾고 후의 방법 찾음... 하...</span>
+            <span class="s1">j </span><span class="s3">= </span><span class="s1">a </span><span class="s3">* (</span><span class="s4">1 </span><span class="s3">+ </span><span class="s1">b</span><span class="s3">) * </span><span class="s1">b</span><span class="s3">/</span><span class="s4">2</span><span class="s3">;</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">이번 계산식의 총 값은 &quot; </span><span class="s3">+ </span><span class="s1">j </span><span class="s3">+ </span><span class="s5">&quot;입니다&quot;</span><span class="s3">);</span>
+        <span class="s3">}</span>
+        <span class="s2">else if </span><span class="s3">(</span><span class="s1">b</span><span class="s3">%</span><span class="s4">2 </span><span class="s3">== </span><span class="s4">1</span><span class="s3">) { </span><span class="s0">//홀수일때 총 합 계산</span>
+            <span class="s1">j </span><span class="s3">= </span><span class="s1">a </span><span class="s3">* ((</span><span class="s4">2 </span><span class="s3">+ </span><span class="s1">b</span><span class="s3">) * (</span><span class="s1">b</span><span class="s3">+</span><span class="s4">1</span><span class="s3">)/</span><span class="s4">2 </span><span class="s3">- (</span><span class="s1">b</span><span class="s3">+</span><span class="s4">1</span><span class="s3">)); </span><span class="s0">// 식과 j가 반대로 되니까 안되어서 한참 헤멤</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">이번 계산식의 총 값은 &quot; </span><span class="s3">+ </span><span class="s1">j </span><span class="s3">+ </span><span class="s5">&quot;입니다&quot;</span><span class="s3">);</span>
+        <span class="s3">}</span>
+
+
+        <span class="s1">array</span><span class="s3">[</span><span class="s1">k</span><span class="s3">] = </span><span class="s1">j</span><span class="s3">; </span><span class="s0">//루프당 j의 값을 저장.</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;array[&quot; </span><span class="s3">+ </span><span class="s1">k </span><span class="s3">+ </span><span class="s5">&quot;]&quot;</span><span class="s3">+ </span><span class="s5">&quot;에 &quot; </span><span class="s3">+ </span><span class="s1">j </span><span class="s3">+ </span><span class="s5">&quot;의 값이 저장되었습니다&quot;</span><span class="s3">);</span>
+        <span class="s1">k</span><span class="s3">++; </span><span class="s0">//루프를 추가</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">k </span><span class="s3">+ </span><span class="s5">&quot;번 루프를 끝냈습니다&quot;</span><span class="s3">);</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">저장 가능 슬롯이 &quot; </span><span class="s3">+ (</span><span class="s4">10</span><span class="s3">-</span><span class="s1">k</span><span class="s3">) + </span><span class="s5">&quot;번 남았습니다&quot;</span><span class="s3">); </span><span class="s0">//하드 코딩 외 방법이 있는지 찾아보려 했으나 쉽지 않음</span>
+        <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">print</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">계속 할까요? (y/n): &quot;</span><span class="s3">);</span>
+
+        <span class="s1">String choice</span><span class="s3">;</span>
+        <span class="s1">choice </span><span class="s3">= </span><span class="s1">sc</span><span class="s3">.</span><span class="s1">nextLine</span><span class="s3">();</span>
+        <span class="s2">if </span><span class="s3">(</span><span class="s1">choice</span><span class="s3">.</span><span class="s1">equals</span><span class="s3">(</span><span class="s5">&quot;n&quot;</span><span class="s3">)) { </span><span class="s0">//String은 .equals() 인 것을 까먹고 ==를 해서 엄청 헤멤...</span>
+            <span class="s1">flag </span><span class="s3">= </span><span class="s2">false</span><span class="s3">;</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;</span><span class="s2">\n</span><span class="s5">-----구구단이 끝났습니다-----&quot;</span><span class="s3">);</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s1">k </span><span class="s3">+ </span><span class="s5">&quot;개의 저장된 슬롯이 있습니다&quot;</span><span class="s3">);</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;해당 슬롯에 저장된 모든 값을 더하는 중입니다...&quot;</span><span class="s3">);</span>
+            <span class="s2">int </span><span class="s1">sum </span><span class="s3">= </span><span class="s4">0</span><span class="s3">;</span>
+            <span class="s2">for </span><span class="s3">(</span><span class="s1">i </span><span class="s3">= </span><span class="s4">0</span><span class="s3">; </span><span class="s1">i </span><span class="s3">&lt; </span><span class="s1">array</span><span class="s3">.</span><span class="s1">length</span><span class="s3">; </span><span class="s1">i</span><span class="s3">++) {</span>
+                <span class="s1">sum </span><span class="s3">+= </span><span class="s1">array</span><span class="s3">[</span><span class="s1">i</span><span class="s3">]; </span><span class="s0">//얘 인터넷에서 찾아서 슬쩍 카피함... sum = sum + array[i] i는 int 안 쓰고 다시 0으로 고정시켜주고 재사용</span>
+            <span class="s3">}</span>
+            <span class="s1">System</span><span class="s3">.</span><span class="s1">out</span><span class="s3">.</span><span class="s1">println</span><span class="s3">(</span><span class="s5">&quot;총 합은 &gt;&gt; &quot; </span><span class="s3">+ </span><span class="s1">sum </span><span class="s3">+ </span><span class="s5">&quot; &lt;&lt; 입니다&quot;</span><span class="s3">);</span>
+            <span class="s2">break</span><span class="s3">;</span>
+            <span class="s3">}</span>
+    <span class="s3">}</span>
+<span class="s3">}</span>
+<span class="s0">//기본 구구단은 별로 어렵지 않은데 추가하는 것이 너무 어려움. 일단 여기까지. 1시간 반 소요...</span>
+<span class="s0">//솔직히 if 대신 switch 쓰려다가 String을 int로 바꾸는게 쉽지 않아서 얌전히 String 사용</span>
+
+<span class="s0">//sum 기능 추가하는데 2시간 소요. 총 3시간 걸림! 힘들었습니다</span></pre>
+</body>
+</html>
