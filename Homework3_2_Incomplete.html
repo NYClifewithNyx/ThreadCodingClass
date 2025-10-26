@@ -1,0 +1,303 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #2aacb8;}
+.s5 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java</span><span class="s2">.</span><span class="s1">util</span><span class="s2">.</span><span class="s1">Scanner</span><span class="s2">; </span><span class="s3">//Scanner class 쓰고 싶으면 넣어줘야함</span>
+
+<span class="s0">public class </span><span class="s1">Main </span><span class="s2">{</span>
+    <span class="s0">static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s3">//드디어... 이걸 어떻게 하는지 챗지랑 드잡이질해서 깨달음</span>
+        <span class="s3">//sample code 없애고 src에 Class에 Main 추가, public class Main 안에 psvm'a' + tab으로 함</span>
+
+        <span class="s1">Scanner sc </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Scanner</span><span class="s2">(</span><span class="s1">System</span><span class="s2">.</span><span class="s1">in</span><span class="s2">);</span>
+
+        <span class="s0">int </span><span class="s1">length</span><span class="s2">; </span><span class="s3">//너비 길이</span>
+        <span class="s0">int </span><span class="s1">width</span><span class="s2">; </span><span class="s3">// 높이 길이</span>
+        <span class="s0">int </span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s3">//length counting // 너비 루프 세기</span>
+        <span class="s0">int </span><span class="s1">j </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s3">//width counting // 높이 루프 세기 (높이)</span>
+
+        <span class="s0">boolean </span><span class="s1">flag </span><span class="s2">= </span><span class="s0">true</span><span class="s2">; </span><span class="s3">//전체 프로그램 루프</span>
+        <span class="s0">int </span><span class="s1">choice</span><span class="s2">; </span><span class="s3">//스위치 선택지</span>
+        <span class="s1">String yn</span><span class="s2">; </span><span class="s3">//Yes or No 선택지. sc.next().charAt(0)를 써보려고 했는데 sc.next()는 스페이스 전까지 입력 받은 문자열 &lt; 이라고 한다. 엔터로 끝나는 sc.nextLine()을 쓰자.</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">닉스의 도형 그리기 교실에 오신 것을 환영합니다&quot;</span><span class="s2">);</span>
+
+        <span class="s0">while </span><span class="s2">(</span><span class="s1">flag</span><span class="s2">) {</span>
+            <span class="s3">//루프 때 저장된 값 리셋용. 후에 sc 등으로 받아서 다른 모양 등으로도 변경 가능하게 할 수 있을듯.</span>
+            <span class="s3">//테두리만 하는 방법은 0과 length에 들어있는 array[][] 등으로 가능할 것 같은데 이번 기회에는 패스. 시간이 없음</span>
+            <span class="s1">String star </span><span class="s2">= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">//*__ 타이트하게 그리고 싶으면 space 줄이기. 기본값 3개 (*__)</span>
+            <span class="s1">String starAdd </span><span class="s2">= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">// 기본값 = 3개 (*__)</span>
+            <span class="s1">String space </span><span class="s2">= </span><span class="s5">&quot;   &quot;</span><span class="s2">; </span><span class="s3">//___ 타이트하게 그리고 싶으면 space 줄이기. 기본값 3개 (___)</span>
+            <span class="s1">String spaceAdd </span><span class="s2">= </span><span class="s5">&quot;   &quot;</span><span class="s2">; </span><span class="s3">//기본값 = 3 (___)</span>
+
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;그리고 싶은 도형을 선택해주세요&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;1. 삼각형▲&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;2. 역삼각형▼&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;3. 직사각형□&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;4. 정사각형■&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;5. 원●&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;6. 다이아몬드◆&quot;</span><span class="s2">);</span>
+            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;7. 별★&quot;</span><span class="s2">);</span>
+            <span class="s1">choice </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">(); </span><span class="s3">//선택지 고르기</span>
+            <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+            <span class="s0">switch </span><span class="s2">(</span><span class="s1">choice</span><span class="s2">) {</span>
+                <span class="s0">case </span><span class="s4">1</span><span class="s2">: </span><span class="s3">//삼각형▲ 그리기</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;삼각형▲을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;너비를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">length </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">]; </span><span class="s3">//ArrayList 안 써보려고 하니까 각 case마다 array를 새로 지정해줘야 하는듯</span>
+
+                    <span class="s3">//삼각형을 만들어봅시다</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                        <span class="s1">array1</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s1">star</span><span class="s2">;</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">array1</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s1">starAdd</span><span class="s2">;</span>
+                    <span class="s2">}</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">; </span><span class="s3">//제발 스위치 쓸 때 break; 까먹지 말기</span>
+
+                <span class="s0">case </span><span class="s4">2</span><span class="s2">: </span><span class="s3">//역삼각형▼ 그리기</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;역삼각형▼을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;너비를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">length </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">];</span>
+
+                    <span class="s3">//역삼각형을 만들어봅시다</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                        <span class="s1">array2</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s1">star</span><span class="s2">;</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s1">starAdd</span><span class="s2">;</span>
+                        <span class="s1">j</span><span class="s2">++;</span>
+                    <span class="s2">}</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">array2</span><span class="s2">[</span><span class="s1">j </span><span class="s2">- </span><span class="s4">1</span><span class="s2">]);</span>
+                        <span class="s1">j</span><span class="s2">--; </span><span class="s3">//j 대신 length--를 썼더니 i &lt; length까지 영향을 받아서 새로운 int를 넣음</span>
+                    <span class="s2">}</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">case </span><span class="s4">3</span><span class="s2">: </span><span class="s3">//직사각형□ 그리기</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;직사각형□을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;너비를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">length </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array3 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">];</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;높이를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">width </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                    <span class="s3">//직사각형□을 만들어봅시다</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length </span><span class="s2">- </span><span class="s4">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//이미 star에 &quot;*  &quot;가 1번 있으므로 (length-1)번만 추가하면 되어서 루프 1번 빼주기</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">//star 너비 늘려주기</span>
+                    <span class="s2">}</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">width</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">star</span><span class="s2">); </span><span class="s3">//높이 길이 만큼 루프 반복</span>
+                    <span class="s2">}</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">case </span><span class="s4">4</span><span class="s2">: </span><span class="s3">//정사각형■ 그리기</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;정사각형■을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;너비를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">length </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array4 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">];</span>
+
+                    <span class="s3">//정사각형■을 만들어봅시다</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length </span><span class="s2">- </span><span class="s4">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//이미 star에 &quot;*  &quot;가 1번 있으므로 (length-1)번만 추가하면 되어서 루프 1번 빼주기</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">//star 너비 늘려주기</span>
+                    <span class="s2">}</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//정사각형이라 너비 길이만큼 높이 반복</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">star</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">case </span><span class="s4">5</span><span class="s2">: </span><span class="s3">//원● 그리기. 참고 자료 : https://goharry.tistory.com/18</span>
+                    <span class="s0">int </span><span class="s1">radius</span><span class="s2">; </span><span class="s3">//반지름 - variable 명을 직관적으로 알아듣기 쉽기 위해 바꿈</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;원●을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;반지름 길이를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">radius </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                    <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">x </span><span class="s2">= -</span><span class="s1">radius</span><span class="s2">; </span><span class="s1">x </span><span class="s2">&lt;= </span><span class="s1">radius</span><span class="s2">; </span><span class="s1">x</span><span class="s2">++) {</span>
+
+                        <span class="s0">for </span><span class="s2">(</span><span class="s0">int </span><span class="s1">y </span><span class="s2">= -</span><span class="s1">radius</span><span class="s2">; </span><span class="s1">y </span><span class="s2">&lt;= </span><span class="s1">radius</span><span class="s2">; </span><span class="s1">y</span><span class="s2">++) {</span>
+
+                            <span class="s0">if </span><span class="s2">(</span><span class="s1">x </span><span class="s2">* </span><span class="s1">x </span><span class="s2">+ </span><span class="s1">y </span><span class="s2">* </span><span class="s1">y </span><span class="s2">&lt; </span><span class="s1">radius </span><span class="s2">* </span><span class="s1">radius</span><span class="s2">) { </span><span class="s3">// &lt;=로 하니까 끝에 *이 나와서 맘에 안드는데, 추가로 양 쪽에 별을 붙이고 싶으나 시간이 안됨</span>
+                                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">star</span><span class="s2">);</span>
+
+                            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                                <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">space</span><span class="s2">);</span>
+                            <span class="s2">}</span>
+                        <span class="s2">}</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+
+                    <span class="s2">}</span>
+
+                    <span class="s3">//농담 아니고 진짜 이렇게 좌표계 스타일로 쉽게 만들 수 있는지 몰랐음</span>
+                    <span class="s3">//안 찾아봤으면 개삽질 계속 했을듯...</span>
+
+                    <span class="s3">/* 
+                    j = radius; 
+                    for (i = 0; i &lt; radius; i++) { // 출력 부분 위쪽 
+                        System.out.println(array5_0[j-1] + array5_1[i]); 
+                        j--; 
+                    } 
+ 
+                    j = radius; 
+                    for (i = 0; i &lt; radius; i++) { //출력 부분 아래쪽 
+                        System.out.println(array5_0[i+1] + array5_1[j-2]); //제일 긴 부분이 두 번 나오지 않게 만듬 
+                        j--; 
+                    } 
+                    */</span>
+
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">case </span><span class="s4">6</span><span class="s2">: </span><span class="s3">//다이아몬드◆ 그리기</span>
+                    <span class="s3">//원활한 수정 편의를 위해서 여기에 다시 star / space 정의했음</span>
+                    <span class="s1">star </span><span class="s2">= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">//좀 날씬한(?) 다이아몬드를 그리고 싶으면 space 줄이기.</span>
+                    <span class="s1">starAdd </span><span class="s2">= </span><span class="s5">&quot;*  &quot;</span><span class="s2">; </span><span class="s3">// 기본값 = 3개 (*__)</span>
+                    <span class="s1">space </span><span class="s2">= </span><span class="s5">&quot;   &quot;</span><span class="s2">; </span><span class="s3">// 위의 별에 맞춰서 스페이스 줄이기. 기본값 = 3 (___)</span>
+                    <span class="s1">spaceAdd </span><span class="s2">= </span><span class="s5">&quot;   &quot;</span><span class="s2">; </span><span class="s3">//기본값 = 3 (___)</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다이아몬드◆을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;대각선의 절반 길이를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s1">length </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array6_0 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">]; </span><span class="s3">//빈칸 저장용</span>
+                    <span class="s1">String</span><span class="s2">[] </span><span class="s1">array6_1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">String</span><span class="s2">[</span><span class="s1">length</span><span class="s2">]; </span><span class="s3">//별 저장용</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) {</span>
+                        <span class="s1">array6_0</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s1">space</span><span class="s2">;</span>
+                        <span class="s1">space </span><span class="s2">+= </span><span class="s1">spaceAdd</span><span class="s2">;</span>
+
+                        <span class="s1">array6_1</span><span class="s2">[</span><span class="s1">i</span><span class="s2">] = </span><span class="s1">star</span><span class="s2">;</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s1">starAdd </span><span class="s2">+ </span><span class="s1">starAdd</span><span class="s2">; </span><span class="s3">//별은 2개씩 늘어남</span>
+                    <span class="s2">}</span>
+
+                    <span class="s1">j </span><span class="s2">= </span><span class="s1">length</span><span class="s2">;</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">// 출력 부분 위쪽</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">array6_0</span><span class="s2">[</span><span class="s1">j </span><span class="s2">- </span><span class="s4">1</span><span class="s2">] + </span><span class="s1">array6_1</span><span class="s2">[</span><span class="s1">i</span><span class="s2">]);</span>
+                        <span class="s1">j</span><span class="s2">--;</span>
+                    <span class="s2">}</span>
+
+                    <span class="s1">j </span><span class="s2">= </span><span class="s1">length</span><span class="s2">;</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">length </span><span class="s2">- </span><span class="s4">1</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//출력 부분 아래쪽</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s1">array6_0</span><span class="s2">[</span><span class="s1">i </span><span class="s2">+ </span><span class="s4">1</span><span class="s2">] + </span><span class="s1">array6_1</span><span class="s2">[</span><span class="s1">j </span><span class="s2">- </span><span class="s4">2</span><span class="s2">]); </span><span class="s3">//제일 긴 부분이 두 번 나오지 않게 만듬</span>
+                        <span class="s1">j</span><span class="s2">--;</span>
+                    <span class="s2">}</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">계속 할까요? y/n: &quot;</span><span class="s2">);</span>
+                    <span class="s1">yn </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+                    <span class="s0">if </span><span class="s2">(</span><span class="s1">yn</span><span class="s2">.</span><span class="s1">equals</span><span class="s2">(</span><span class="s5">&quot;n&quot;</span><span class="s2">)) {</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;</span><span class="s0">\n</span><span class="s5">도형 그리기 교실을 종료합니다&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;다음 시간에 또 만나요!&quot;</span><span class="s2">);</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">exit</span><span class="s2">(</span><span class="s4">0</span><span class="s2">);</span>
+                    <span class="s2">}</span>
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">case </span><span class="s4">7</span><span class="s2">: </span><span class="s3">//별★ 그리기</span>
+
+                    <span class="s1">star </span><span class="s2">= </span><span class="s5">&quot;* &quot;</span><span class="s2">;</span>
+                    <span class="s1">starAdd </span><span class="s2">= </span><span class="s5">&quot;* &quot;</span><span class="s2">;</span>
+                    <span class="s1">space </span><span class="s2">= </span><span class="s5">&quot; &quot;</span><span class="s2">;</span>
+                    <span class="s1">spaceAdd </span><span class="s2">= </span><span class="s5">&quot; &quot;</span><span class="s2">;</span>
+
+                    <span class="s3">// sin 18 degree = 0.31</span>
+                    <span class="s3">// cos 18 degree =  0.95</span>
+
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;별★을 그려보겠습니다&quot;</span><span class="s2">);</span>
+                    <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s5">&quot;별의 한 면 크기를 얼마로 하겠습니까?&quot;</span><span class="s2">);</span>
+                    <span class="s0">int </span><span class="s1">x</span><span class="s2">;</span>
+                    <span class="s1">x </span><span class="s2">= </span><span class="s1">sc</span><span class="s2">.</span><span class="s1">nextInt</span><span class="s2">();</span>
+                    <span class="s1">sc</span><span class="s2">.</span><span class="s1">nextLine</span><span class="s2">();</span>
+
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">1</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt;= </span><span class="s1">x</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//첫번째 파트: 삼각형</span>
+
+                        <span class="s0">for </span><span class="s2">(</span><span class="s1">j </span><span class="s2">= (</span><span class="s4">4 </span><span class="s2">* </span><span class="s1">x</span><span class="s2">); </span><span class="s1">j </span><span class="s2">&gt;= </span><span class="s1">i</span><span class="s2">; </span><span class="s1">j</span><span class="s2">--) { </span><span class="s3">//스페이스를 먼저 만들어줌</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">space</span><span class="s2">);</span>
+                        <span class="s2">}</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">star</span><span class="s2">);</span>
+                        <span class="s1">star </span><span class="s2">+= </span><span class="s1">starAdd</span><span class="s2">;</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+                    <span class="s2">}</span>
+
+                    <span class="s1">star </span><span class="s2">= </span><span class="s5">&quot;* &quot;</span><span class="s2">;</span>
+
+                    <span class="s3">//두번째 파트, 역사다리꼴. 면적 넓이는 2.68x지만, 반올림 해서 3으로 함</span>
+                    <span class="s3">//이거도 이게 아닌 것 같음... 포기</span>
+                    <span class="s0">for </span><span class="s2">(</span><span class="s1">i </span><span class="s2">= </span><span class="s4">0</span><span class="s2">; </span><span class="s1">i </span><span class="s2">&lt; </span><span class="s1">x</span><span class="s2">; </span><span class="s1">i</span><span class="s2">++) { </span><span class="s3">//별을 그려줌</span>
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">space</span><span class="s2">);</span>
+                        <span class="s1">space </span><span class="s2">+= </span><span class="s1">spaceAdd</span><span class="s2">;</span>
+
+                        <span class="s0">for </span><span class="s2">(</span><span class="s1">j </span><span class="s2">= </span><span class="s4">4 </span><span class="s2">* </span><span class="s1">x</span><span class="s2">; </span><span class="s1">j </span><span class="s2">&gt; </span><span class="s1">i</span><span class="s2">; </span><span class="s1">j</span><span class="s2">--) {</span>
+                            <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">print</span><span class="s2">(</span><span class="s1">star</span><span class="s2">);</span>
+                        <span class="s2">}</span>
+
+                        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+                    <span class="s2">}</span>
+
+                    <span class="s3">//세번째 파트. 사다리꼴이지만 중간에 삼각형이 생김</span>
+                    <span class="s3">//포기 :(</span>
+
+                    <span class="s0">break</span><span class="s2">;</span>
+
+                <span class="s0">default</span><span class="s2">:</span>
+            <span class="s2">}</span>
+
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
