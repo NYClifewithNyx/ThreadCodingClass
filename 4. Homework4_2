@@ -149,11 +149,11 @@ public class Main { //모든 메써드는 클래스 안에 있어야한다
                         }
 
                         System.out.println("\n성적의 총 합 : " + sum);
-                        average = sum / studentIDNo;
+                        average = divide(sum, studentIDNo);
                         System.out.println("전체 성적 평균 : " +  average);
 
                         int askii;
-                        askii = average / 10;
+                        askii = divide(average, 10);
 
                         System.out.print("[");
                         for (int i = 1; i <= askii; i++) {
@@ -224,4 +224,10 @@ public class Main { //모든 메써드는 클래스 안에 있어야한다
             }
         }
     }
+
+    public static int divide(int number1, int number2) {
+        int result = number1 / number2;
+        return result;
+    }
+
 }
