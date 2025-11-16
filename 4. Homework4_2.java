@@ -1,5 +1,4 @@
 import java.util.ArrayList; //ArrayList 사용하겠다고 넣어줌
-import java.util.List;
 import java.util.Scanner; //Scanner 사용하겠다고 넣어줌
 import java.util.Collections; //Max 찾으려고 넣었는데 음...
 
@@ -87,14 +86,8 @@ public class Main { //모든 메써드는 클래스 안에 있어야한다
                             System.out.println("학생 번호는 " + studentNameList.size() + "번 입니다"); //이걸 .size로 할지 다시 좀 더 고민
                         } else {
                             System.out.println("등록을 취소했습니다\n");
-                            System.out.println("계속 등록하시겠습니까?\n");
-                            System.out.println("1. 네 / 2. 아니오 (1. Y / 2. N)");
-                            yn = sc.nextLine();
-
-                            if (yn.equalsIgnoreCase("N") || yn.equals("2") || yn.equals("아니오") || yn.equalsIgnoreCase("no")) {
-                                break;
-                            }
                         }
+
                         System.out.println("\n계속 등록하시겠습니까?");
                         System.out.println("1. 네 / 2. 아니오 (1. Y / 2. N)");
                         yn = sc.nextLine();
@@ -143,7 +136,10 @@ public class Main { //모든 메써드는 클래스 안에 있어야한다
                         System.out.print("등록된 성적들 : ");
 
                         for (int i = 0; i < studentIDNo; i++) {
-                            System.out.print(studentScoreList.get(i) + " / "); //어떻게 해서든 " / "를 학생 수보다 1개 적게 돌리려고 했는데 잘 안됨
+                            System.out.print(studentScoreList.get(i)); //어떻게 해서든 " / "를 학생 수보다 1개 적게 돌리려고 했는데 잘 안됐는데 챗지가 알려줌
+                            if (i < studentIDNo - 1 ) {
+                                System.out.print(" / ");
+                            }
                             sum += studentScoreList.get(i);
                         }
 
@@ -151,14 +147,13 @@ public class Main { //모든 메써드는 클래스 안에 있어야한다
                         average = divide(sum, studentIDNo);
                         System.out.println("전체 성적 평균 : " +  average);
 
-                        int askii;
-                        askii = divide(average, 10);
+                        int starCount = divide(average, 10);
 
                         System.out.print("[");
-                        for (int i = 1; i <= askii; i++) {
+                        for (int i = 1; i <= starCount; i++) {
                             System.out.print("*");
                         }
-                        for (askii = askii; askii < 10; askii++) {
+                        for (int i = starCount; i < 10; i++) { //ChatGPT가 제안해준 방법. 기존 askii = askii 대신 고쳐봄
                             System.out.print("-");
                         }
                         System.out.println("]");
